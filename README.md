@@ -60,6 +60,7 @@ All of the following samples show how to access and work with a user's Microsoft
 | [Set your signature using Outlook event-based activation](Samples/outlook-set-signature) | Uses event-based activation to run an Outlook add-in when the user creates a new message or appointment.|
 | [Verify the color categories of a message or appointment before it's sent using Smart Alerts](Samples/outlook-check-item-categories/) | Uses Outlook Smart Alerts to verify that required color categories are applied to a new message or appointment before it's sent.|
 | [Verify the sensitivity label of a message](Samples/outlook-verify-sensitivity-label/) | Uses the sensitivity label API in an event-based add-in to verify and apply the **Highly Confidential** sensitivity label to applicable outgoing messages. |
+| [Report spam or phishing emails in Outlook (preview)](Samples/outlook-spam-reporting/) | Builds an integrated spam-reporting add-in that's displayed in a prominent spot on the Outlook ribbon. |
 
 ## Excel
 
@@ -79,6 +80,7 @@ All of the following samples show how to access and work with a user's Microsoft
 | Name           | Description  |
 | -------------- | ------------ |
 | [Get, edit, and set OOXML content in a Word document with a Word add-in](Samples/word-add-in-get-set-edit-openxml)| Shows how to get, edit, and set OOXML content in a Word document.|
+| [Import a Word document template with a Word add-in](Samples/word-import-template)| Shows how to import templates in a Word document.|
 | [Load and write Open XML in your Word add-in](Samples/word-add-in-load-and-write-open-xml) | Shows how to add a variety of rich content types to a Word document using the **setSelectedDataAsync** method with **ooxml** coercion type.|
 | [Manage citations with your Word add-in](Samples/word-citation-management)| Shows how to manage citations in a Word document.|
 
@@ -86,8 +88,8 @@ All of the following samples show how to access and work with a user's Microsoft
 
 Check out these samples if you want to take advantage of the [shared runtime](https://learn.microsoft.com/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime) for your Office Add-in.
 
-| Date               | Name           | Description  |
-| ------------------ | -------------- | ------------ |
+| Name           | Description  |
+| -------------- | ------------ |
 | [Share global data with a shared runtime](Samples/excel-shared-runtime-global-state) | Shows how to set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
 | [Manage ribbon and task pane UI, and run code on doc open](Samples/excel-shared-runtime-scenario) | Shows how to create contextual ribbon buttons that are enabled based on the state of your add-in. |
 
