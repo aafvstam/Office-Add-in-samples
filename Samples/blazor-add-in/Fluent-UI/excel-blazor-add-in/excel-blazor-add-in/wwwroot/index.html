@@ -12,11 +12,28 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="BlazorAddIn.styles.css" rel="stylesheet" />
 
+    <script type="text/javascript">
+        // Ugly fix! See https://learn.microsoft.com/en-us/answers/questions/1150659/uncaught-typeerror-history-pushstate-is-not-a-func
+        // Office js deletes window.history.pushState and window.history.replaceState. Cache them and restore them
+        window._historyCache = {
+            replaceState: window.history.replaceState,
+            pushState: window.history.pushState
+        };
+    </script>
+
     <!--
         Office JavaScript API - replace lib/1 with lib/beta for preview options
     -->
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <script type="text/javascript">
+        // Ugly fix! See https://learn.microsoft.com/en-us/answers/questions/1150659/uncaught-typeerror-history-pushstate-is-not-a-func
+        // Office js deletes window.history.pushState and window.history.replaceState. Restore them
+        window.history.replaceState = window._historyCache.replaceState;
+        window.history.pushState = window._historyCache.pushState;
+    </script>
+
 </head>
 
 <body>
