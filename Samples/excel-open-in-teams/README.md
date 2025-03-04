@@ -2,15 +2,15 @@
 page_type: sample
 urlFragment: office-excel-add-in-open-in-teams
 products:
-- office-excel
-- office-teams
-- m365
+  - office
+  - office-excel
+  - office-teams
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 02/11/2021 1:25:00 PM
 description: "Learn how to open data from your web site in a spreadsheet in Teams for team collaboration."
 ---
@@ -94,7 +94,7 @@ Before you run the sample, you'll need to do a few things to make it work proper
 
 ## Run the sample
 
-1. Press **F5** to build and debug the project. The Contoso Web application will open in a browser.
+1. Press <kbd>F5</kbd> to build and debug the project. The Contoso Web application will open in a browser.
 
     ![Screenshot of Contoso web app with Products button on the ribbon](./images/contoso-web-app.png)
 

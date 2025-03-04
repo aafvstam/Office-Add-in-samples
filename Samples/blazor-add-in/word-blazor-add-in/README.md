@@ -2,15 +2,15 @@
 page_type: sample
 urlFragment: word-blazor-add-in
 products:
-  - office-add-ins
   - office
+  - office-word
 languages:
   - javascript
   - C#
 extensions:
   contentType: samples
   technologies: 
-  - Add-ins
+    - Add-ins
   createdDate: '04/14/2022 10:00:00 PM'
 description: 'Create a Blazor Webassembly Word add-in showcasing some samples.'
 ---
@@ -39,7 +39,7 @@ This sample shows how to build a Word add-in using .NET Blazor technologies. Bla
 
 1. Download or clone the [Office Add-ins samples repository](https://github.com/OfficeDev/Office-Add-in-samples).
 1. Open Visual Studio 2022 and open the: **Office-Add-in-samples\Samples\blazor-add-in\word-blazor-add-in\word-blazor-add-in.sln** solution.
-1. Choose **Debug** > **Start Debugging**. Or press F5 to start the solution.
+1. Choose **Debug** > **Start Debugging**. Or press <kbd>F5</kbd> to start the solution.
 1. When Word opens, choose **Sample Add-in** > **Show task pane** (if not already open).
 1. Try out the controls on the task panes.
 1. Try out the custom buttons on the **Sample Add-in** tab on the ribbon.

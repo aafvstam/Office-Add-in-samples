@@ -2,9 +2,8 @@
 page_type: sample
 urlFragment: office-add-in-contextual-tabs
 products:
-- office-excel
-- office-powerpoint
-- office-365
+  - office-excel
+  - office
 languages:
 - javascript
 extensions:
@@ -28,8 +27,8 @@ This sample accomplishes the following tasks using Office ribbon APIs.
 ## Applies to
 
 - Excel on Windows
+- Excel on Mac
 - Excel on the web
-- PowerPoint on Windows
 
 ## Prerequisites
 

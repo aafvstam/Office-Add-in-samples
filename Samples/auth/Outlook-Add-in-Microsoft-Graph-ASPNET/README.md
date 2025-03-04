@@ -2,14 +2,16 @@
 page_type: sample
 urlFragment: outlook-add-in-auth-aspnet-graph
 products:
-- office-outlook
-- office-365
+  - office
+  - office-outlook
+  - ms-graph
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
+    - Microsoft Graph
   createdDate: 5/1/2019 1:25:00 PM
 description: "Learn how to build a Microsoft Outlook Add-in that connects to Microsoft Graph."
 ---
@@ -23,7 +25,7 @@ Learn how to build a Microsoft Outlook Add-in that connects to Microsoft Graph, 
 Integrating data from online service providers increases the value and adoption of your add-ins. This code sample shows you how to connect your Outlook add-in to Microsoft Graph. Use this code sample to:
 
 * Connect to Microsoft Graph from an Office Add-in.
-* Use the MSAL .NET Library to implement the OAuth 2.0 authorization framework in an add-in.
+* Use the MSAL.NET Library to implement the OAuth 2.0 authorization framework in an add-in.
 * Use the OneDrive REST APIs from Microsoft Graph.
 * Show a dialog using the Office UI namespace.
 * Build an Add-in using ASP.NET MVC, MSAL 3.x.x for .NET,  and Office.js.
@@ -87,14 +89,14 @@ Version  | Date | Comments
 ## Run the solution
 
 1. Open the Visual Studio solution file.
-1. Right-click **Outlook-Add-in-Microsoft-Graph-ASPNET** solution in **Solution Explorer** (not the project nodes), and then choose **Set startup projects**. Select the **Multiple startup projects** radio button. Make sure the project that ends with "Web" is listed first.
+1. Right-click (or select and hold) **Outlook-Add-in-Microsoft-Graph-ASPNET** solution in **Solution Explorer** (not the project nodes), and then choose **Set startup projects**. Select the **Multiple startup projects** radio button. Make sure the project that ends with "Web" is listed first.
 1. On the **Build** menu, select **Clean Solution**. When it finishes, open the **Build** menu again and select **Build Solution**.
 1. In **Solution Explorer**, select the **Outlook-Add-in-Microsoft-Graph-ASPNET** project node (not the top solution node and not the project whose name ends in "Web").
 1. In the **Properties** pane, open the **Start Action** drop down and choose whether to run the add-in in desktop Outlook or with Outlook on the web in one of the listed browsers. (*Do not choose Internet Explorer. See **Known Issues** below for why.*)
 
     ![Choose the desired Outlook host: desktop or one of the browsers](images/StartAction.JPG)
 
-1. Press F5. The first time you do this, you will be prompted to specify the email and password of the user that you will use for debugging the add-in. Use the credentials of an admin for your O365 tenancy.
+1. Press <kbd>F5</kbd>. The first time you do this, you will be prompted to specify the email and password of the user that you will use for debugging the add-in. Use the credentials of an admin for your O365 tenancy.
 
     ![Form with text boxes for user's email and password](images/CredentialsPrompt.JPG)
 

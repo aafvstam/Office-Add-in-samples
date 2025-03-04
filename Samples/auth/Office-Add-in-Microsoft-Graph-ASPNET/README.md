@@ -2,14 +2,15 @@
 page_type: sample
 urlFragment: office-add-in-auth-aspnet-graph
 products:
-- office-excel
-- office-365
+  - office
+  - office-excel
+  - ms-graph
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 5/1/2019 1:25:00 PM
 description: "Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, finds the first three workbooks stored in OneDrive for Business, fetches their filenames, and inserts the names into an Office document using Office.js."
 ---
@@ -90,14 +91,14 @@ Version  | Date | Comments
 ### Run the solution
 
 1. Open the Visual Studio solution file. 
-1. Right-click **Office-Add-in-Microsoft-Graph-ASPNET** solution in **Solution Explorer** (not the project nodes), and then choose **Set startup projects**. Select the **Multiple startup projects** radio button. Make sure the project that ends with "Web" is listed first.
+1. Right-click (or select and hold) **Office-Add-in-Microsoft-Graph-ASPNET** solution in **Solution Explorer** (not the project nodes), and then choose **Set startup projects**. Select the **Multiple startup projects** radio button. Make sure the project that ends with "Web" is listed first.
 1. On the **Build** menu, select **Clean Solution**. When it finishes, open the **Build** menu again and select **Build Solution**.
 1. In **Solution Explorer**, select the **Office-Add-in-Microsoft-Graph-ASPNET** project node (not the top solution node and not the project whose name ends in "Web").
 1. In the **Properties** pane, open the **Start Document** drop down and choose one of the three options (Excel, Word, or PowerPoint).
 
     ![Choose the desired Office host application: Excel or PowerPoint or Word](images/SelectHost.JPG)
 
-1. Press F5.
+1. Press <kbd>F5</kbd>.
 1. In the Office application, choose **Insert** > **Open Add-in** in the **OneDrive Files** group to open the task pane add-in.
 1. The pages and buttons in the add-in are self-explanatory.
 

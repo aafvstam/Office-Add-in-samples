@@ -1,14 +1,13 @@
 ---
 page_type: sample
 products:
-- office-excel
-- office-365
+  - office-excel
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 5/1/2019 1:25:00 PM
 ---
 # Obtener datos de OneDrive usando Microsoft Graph y MSAL.NET en un complemento de Office 
@@ -94,7 +93,7 @@ Versión | Fecha | Comentarios
 
     ![ Elija la aplicación host de Office que desee:](images/SelectHost.JPG) Word, Excel o PowerPoint](images/SelectHost.JPG)
 
-6. Pulse F5. 
+6. Pulse <kbd>F5</kbd>. 
 7. En la aplicación de Office, elija **insertar** > **Abrir complemento**en los**archivos de OneDrive** para abrir el complemento del panel de tareas.
 8. Las páginas y los botones del complemento se explican por sí mismos. 
 

@@ -2,16 +2,19 @@
 page_type: sample
 urlFragment: office-add-in-migrate-vsto-to-web
 products:
-- office
-- office-excel
+  - office
+  - office-excel
+  - office-outlook
+  - office-powerpoint
+  - office-word
 languages:
-- javascript
-- csharp
+  - javascript
+  - csharp
 urlFragment: vsto-shared-library-excel
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: "01/29/2020 1:25:00 PM"
 description: "Visual Studio Tools for Office (VSTO) add-ins can only run in Office on Windows. By migrating your code to an Office web add-in, you can expand the reach of your add-in to mobile and online platforms. Migrating the code will involve rewriting it in the JavaScript language, and also updating it to use the Office JavaScript APIs. However, you can reduce migration cost by creating a shared library and keeping some of your existing add-in code in its current language."
 ---
@@ -79,8 +82,8 @@ UI code and document interaction code will need to be rewritten for the Office w
 You'll need to install the required NuGet packages, and add test certificates for the solution to build and run correctly.
 
 1. Start Visual Studio 2019 and open the **/completed/Cell-Analyzer.sln** solution.
-2. In **Solution Explorer**, right-click **Solution 'Cell-Analyzer'**, and choose **Restore NuGet Packages**.
-3. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
+2. In **Solution Explorer**, right-click (or select and hold) **Solution 'Cell-Analyzer'** and choose **Restore NuGet Packages**.
+3. In **Solution Explorer**, right-click (or select and hold) the **Cell-Analyzer** project and choose **Properties**.
 4. Choose the **Signing** category in the properties.
 5. Choose **Sign the ClickOnce manifests**, and then chose **Create Test Certificate**.
 6. In the **Create Test Certificate** dialog, enter and confirm a password. Then choose **OK**.
@@ -99,7 +102,7 @@ The method **GetUnicodeFromText** is the shared function between both the VSTO a
 ### Run the VSTO add-in with the shared class library
 
 1. Start Visual Studio 2019 and open the **/completed/Cell-Analyzer.sln** solution.
-2. In **Solution Explorer** right-click the **Cell-Analyzer** project and choose **Set as Startup Project**.
+2. In **Solution Explorer**, right-click (or select and hold) the **Cell-Analyzer** project and choose **Set as Startup Project**.
 3. From the **Debug** menu, choose **Start Debugging**.
 
 > **Note:** In the completed folder, the Cell Analyzer add-in is already configured to use the shared class library.
@@ -118,7 +121,7 @@ The method **AnalyzeUnicode** is a wrapper that calls into the shared class libr
 ### Run the REST API project
 
 1. Start Visual Studio 2019 and open the **/completed/Cell-Analyzer.sln** solution.
-2. In **Solution Explorer** right-click the **CellAnalyzerRESTAPI** project and choose **Set as Startup Project**.
+2. In **Solution Explorer**, right-click (or select and hold) the **CellAnalyzerRESTAPI** project and choose **Set as Startup Project**.
 3. From the **Debug** menu, choose **Start Debugging**.
 4. In the browser that opens, enter the following URL: **https://localhost:44323/api/analyzeunicode?value=test**
 
@@ -138,7 +141,7 @@ The method **AnalyzeUnicode** is a wrapper that calls into the shared class libr
 ### Run the Office web add-in project
 
 1. Start Visual Studio 2019 and open the **/completed/Cell-Analyzer.sln** solution.
-2. In **Solution Explorer** right-click the top node **Solution 'Cell-Analyzer'** and choose **Set Startup Projects**.
+2. In **Solution Explorer**, right-click (or select and hold) the top node **Solution 'Cell-Analyzer'** and choose **Set Startup Projects**.
 3. In the **Solution 'Cell-Analyzer' Property Pages** dialog, select **Multiple startup projects**.
 4. Enable the Start action for each of the following projects.
     - CellAnalyzerRESTAPI

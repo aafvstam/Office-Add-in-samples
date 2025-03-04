@@ -3,15 +3,14 @@ title: "Use SSO with event-based activation in an Outlook add-in"
 page_type: sample
 urlFragment: outlook-add-in-sso-event-based-activation
 products:
-- office-add-ins
-- office-outlook
-- office
+  - office-outlook
+  - office
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 02/21/2023 10:00:00 AM
 description: "Use SSO with event-based activation in an Outlook add-in."
 ---
@@ -29,7 +28,7 @@ The sample shows how to use SSO to access a user's Microsoft Graph data from an 
 
 ## Applies to
 
-- Outlook on Windows
+- Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic)
 - Outlook on the web
 - [new Outlook on Mac](https://support.microsoft.com/office/6283be54-e74d-434e-babb-b70cefc77439)
 

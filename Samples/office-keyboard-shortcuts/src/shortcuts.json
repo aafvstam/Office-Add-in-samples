@@ -1,0 +1,51 @@
+{
+    "actions": [
+        {
+            "id": "ShowTaskpane",
+            "type": "ExecuteFunction",
+            "name": "Show task pane for add-in"
+        },
+        {
+            "id": "HideTaskpane",
+            "type": "ExecuteFunction",
+            "name": "Hide task pane for add-in"
+        },
+        {
+            "id": "RunAction",
+            "type": "ExecuteFunction",
+            "name": "Run an action specific to the Office host"
+        },
+        {
+            "id": "TestConflict",
+            "type": "ExecuteFunction",
+            "name": "Test the conflict dialog"
+        }
+
+    ],
+    "shortcuts": [
+        {
+            "action": "ShowTaskpane",
+            "key": {
+                "default": "Ctrl+Alt+Up"
+            }
+        },
+        {
+            "action": "HideTaskpane",
+            "key": {
+                "default": "Ctrl+Alt+Down"
+            }
+        },
+        {
+            "action": "RunAction",
+            "key": {
+                "default": "Ctrl+Alt+Q"
+            }
+        },
+        {
+            "action": "TestConflict",
+            "key": {
+                "default": "Ctrl+R"
+            }
+        }
+    ]
+}

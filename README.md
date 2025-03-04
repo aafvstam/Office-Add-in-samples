@@ -22,6 +22,7 @@ The following samples are the completed versions of various tutorials for Office
 | [PowerPoint Tutorial (Visual Studio) - Completed](Samples/tutorials/powerpoint-tutorial) | This sample is the completed version of the [Tutorial: Create a PowerPoint task pane add-in](https://learn.microsoft.com/office/dev/add-ins/tutorials/powerpoint-tutorialtabs=visualstudio) that shows how to create a PowerPoint add-in with a task pane. The add-in shows how to add the [Bing](https://www.bing.com) photo of the day to a slide, add text to a slide, get slide metadata, and navigate between slides. |
 | [PowerPoint Tutorial (yo office) - Completed](Samples/tutorials/powerpoint-tutorial-yo) | This sample is the completed version of the [Tutorial: Create a PowerPoint task pane add-in](https://learn.microsoft.com/office/dev/add-ins/tutorials/powerpoint-tutorial?tabs=yeomangenerator) that shows how to create a PowerPoint add-in with a task pane. The add-in shows how to add an image to a slide, add text to a slide, get slide metadata, and navigate between slides. |
 | [Word Tutorial - Completed](Samples/tutorials/word-tutorial) | This sample is the completed version of the [Tutorial: Create a Word task pane add-in](https://learn.microsoft.com/office/dev/add-ins/tutorials/word-tutorial) that shows how to create a Word add-in with a task pane. The add-in shows how to insert and replace text ranges, paragraphs, images, HTML, tables, and content controls. The add-in also shows how to format text and how to manage content in content controls. |
+| [Office Add-in First-run Experience Tutorial - Completed](Samples/tutorials/first-run-experience-tutorial) | This sample is the result of completing the [Build an Office Add-in with a basic first-run experience](https://learn.microsoft.com/office/dev/add-ins/tutorials/first-run-experience-tutorial) that shows the basics of implementing a first-run experience (FRE). Excel is used in this sample but the pattern can be applied to other Office applications where Office Web Add-ins are supported. |
 
 ## Blazor WebAssembly
 
@@ -31,25 +32,28 @@ The following samples are the completed versions of various tutorials for Office
 | [Create a Blazor WebAssembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in) | Uses .NET Blazor technologies to build a Word add-in. |
 | [Create a Blazor WebAssembly Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in) | Uses .NET Blazor technologies to build an Outlook add-in. |
 
-## Auth, Identity and Single Sign-on (SSO)
+## Authentication, authorization, and single sign-on (SSO)
 
-All of the following samples show how to access and work with a user's Microsoft Graph data using the Microsoft identity platform.
+The following samples show how to access and work with a user's Microsoft Graph data using the [Microsoft identity platform](https://learn.microsoft.com/entra/identity-platform/v2-overview).
 
-| Host | Auth approach | Platform | Name |
-| ---- | ------------- | -------- | ---- |
-| Outlook add-in | SSO | ASP.NET server |[Use SSO in an Outlook Add-in with ASP.NET](Samples/auth/Outlook-Add-in-SSO)|
-| Outlook add-in | SSO | Node.js server |[Use SSO with event-based activation in an Outlook add-in](Samples/auth/Outlook-Add-in-SSO-events)|
-| Office Add-in | SSO | ASP.NET server |[Use SSO in an Office Add-in with ASP.NET](Samples/auth/Office-Add-in-ASPNET-SSO)|
-| Excel add-in | SSO | Node.js server |[Use SSO in an Office Add-in with Node.js](Samples/auth/Office-Add-in-NodeJS-SSO)|
-| Excel add-in | MSAL | React SPA |[Use MSAL.js for auth and Microsoft Graph in an Excel add-in](Samples/auth/Office-Add-in-Microsoft-Graph-React)|
-| Excel add-in | MSAL | ASP.NET server |[Use MSAL.NET for auth and Microsoft Graph in an Excel add-in](Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)|
-| Outlook add-in | MSAL | ASP.NET server |[Use MSAL.NET for auth and Microsoft Graph in an Outlook add-in](Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)|
+| Name                | Applies to | Description         |
+|:--------------------|:-----------|:--------------------|
+| [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-SSO-NAA) | Excel<br>PowerPoint<br>Word | Shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document. |
+| [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Outlook | Shows how to use MSAL.js nested app authentication (NAA) in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into a new message body. |
+| [Use SSO with event-based activation in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-events) | Outlook | Shows how to use SSO to access a user's Microsoft Graph data from an event handled by an Outlook add-in. |
+| [SSO Sample Outlook Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) | Outlook | Uses Office's SSO feature to give the add-in access to Microsoft Graph data. |
+| [Get OneDrive data using Microsoft Graph and MSAL.js in an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React) | Excel | Builds an Office Add-in as a single-page application (SPA) with no backend. The sample uses Microsoft Graph to access workbooks stored in OneDrive for Business. Information from the workbooks is then inserted into an Office document. |
+| [Get OneDrive data using Microsoft Graph and MSAL.NET in an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) | Excel<br>PowerPoint<br>Word | Builds an Office Add-in that uses Microsoft Graph to access workbooks stored in OneDrive for Business. Information from the workbooks is then inserted into an Office document. |
+| [Get Excel workbooks using Microsoft Graph and MSAL in an Outlook Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET) | Outlook | Builds an Outlook add-in that connects to Microsoft Graph to access workbooks stored in OneDrive for Business. Information from the workbooks is then used to compose a new email message. |
+| [SSO Office Add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Excel<br>PowerPoint<br>Word |Uses the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
+| [SSO Office Add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Excel<br>PowerPoint<br>Word | Uses the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
 ## Office
 
 | Name           | Description  |
 | -------------- | ------------ |
 | [Save custom settings in your Office Add-in](Samples/office-add-in-save-custom-settings) | Shows how to save custom settings inside an Office Add-in. The add-in stores data as key/value pairs, using the JavaScript API for Office property bag, browser cookies, web storage (localStorage and sessionStorage), or by storing the data in a hidden div in the document. |
+| [Use keyboard shortcuts for Office Add-in actions](Samples/office-keyboard-shortcuts) | Shows how to create custom keyboard shortcuts to invoke certain actions for your Office Add-in. |
 
 ## Outlook
 
@@ -60,7 +64,7 @@ All of the following samples show how to access and work with a user's Microsoft
 | [Set your signature using Outlook event-based activation](Samples/outlook-set-signature) | Uses event-based activation to run an Outlook add-in when the user creates a new message or appointment.|
 | [Verify the color categories of a message or appointment before it's sent using Smart Alerts](Samples/outlook-check-item-categories/) | Uses Outlook Smart Alerts to verify that required color categories are applied to a new message or appointment before it's sent.|
 | [Verify the sensitivity label of a message](Samples/outlook-verify-sensitivity-label/) | Uses the sensitivity label API in an event-based add-in to verify and apply the **Highly Confidential** sensitivity label to applicable outgoing messages. |
-| [Report spam or phishing emails in Outlook (preview)](Samples/outlook-spam-reporting/) | Builds an integrated spam-reporting add-in that's displayed in a prominent spot on the Outlook ribbon. |
+| [Report spam or phishing emails in Outlook](Samples/outlook-spam-reporting/) | Builds an integrated spam-reporting add-in that's displayed in a prominent spot on the Outlook ribbon. |
 
 ## Excel
 
@@ -70,7 +74,6 @@ All of the following samples show how to access and work with a user's Microsoft
 | [Open in Teams](Samples/excel-open-in-teams) | Creates a new Excel spreadsheet in Microsoft Teams containing data you define.|
 | [Insert an external Excel file and populate it with JSON data](Samples/excel-insert-file)  | Insert an existing template from an external Excel file into the currently open Excel file. Then retrieve data from a JSON web service and populate the template for the customer. |
 | [Create custom contextual tabs on the ribbon](Samples/office-contextual-tabs) | This sample shows how to create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
-| [Use keyboard shortcuts for Office add-in actions](Samples/excel-keyboard-shortcuts) | Shows how to set up a basic Excel add-in project that utilizes keyboard shortcuts. |
 | [Custom function sample using web worker](Excel-custom-functions/web-worker) | Shows how to use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
 | [Use storage techniques to access data from an Office Add-in when offline](Samples/Excel.OfflineStorageAddin) | Demonstrates how you can implement localStorage to enable limited functionality for your Office Add-in when a user experiences lost connection. |
 | [Custom function batching pattern](Excel-custom-functions/Batching)| Batch multiple calls into a single call to reduce the number of network calls to a remote service.|

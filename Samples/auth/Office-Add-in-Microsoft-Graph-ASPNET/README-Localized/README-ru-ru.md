@@ -1,14 +1,14 @@
 ---
 page_type: sample
 products:
-- office-excel
-- office-365
+  - office
+  - office-excel
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 5/1/2019 1:25:00 PM
 ---
 # Получение данных OneDrive с помощью Microsoft Graph и MSAL.NET в надстройке Office 
@@ -94,7 +94,7 @@ extensions:
 
     ![Выбор ведущего приложения Office:](images/SelectHost.JPG) Excel, PowerPoint или Word](images/SelectHost.JPG)
 
-6. Нажмите клавишу F5. 
+6. Нажмите клавишу <kbd>F5</kbd>. 
 7. В приложении Office выберите **Вставить** > **Открыть приложение** в группе **Файлы OneDrive**, чтобы открыть надстройку "Область задач".
 8. Страницы и кнопки в надстройке не требуют объяснений. 
 

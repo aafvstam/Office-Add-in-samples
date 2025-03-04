@@ -2,15 +2,15 @@
 page_type: sample
 urlFragment: azure-function-with-excel-custom-function
 products:
-- office-excel
-- office-365
-- azure-functions
+  - office
+  - office-excel
+  - azure-functions
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 10/2/2019 1:25:00 PM
 description: "You can expand the capabilities of Excel custom functions by integrating with Azure Functions."
 ---
@@ -32,7 +32,7 @@ This sample shows how to move the code from the `Add` custom function into an Az
 To set up your development environment:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com) on one of the supported platforms.
-2. Install the [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). You can also search for the Azure Functions extension in the VS Code Extensions view (Ctrl + Shift + X) and typing 'Azure Functions'.
+2. Install the [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). You can also search for the Azure Functions extension in the VS Code Extensions view (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) and typing 'Azure Functions'.
 
 You will also need the following:
 
@@ -124,15 +124,15 @@ If you prefer to host the web server for the custom function on your computer, f
 You can also deploy and run the Azure Function from your own Azure account.
 
 1. Start Visual Studio Code and open the **AzureFunction/AzureFunctionProject** folder in the project.
-1. In Visual Studio Code, press F1 to open the command palette. In the command palette, search for and select **Azure Functions: Deploy to function app....** and then choose your subscription.
+1. In Visual Studio Code, press <kbd>F1</kbd> to open the command palette. In the command palette, search for and select **Azure Functions: Deploy to function app....** and then choose your subscription.
     ![Screenshot of selecting Azure Functions: Deploy to function app in the command palette](images/azure-deploy-task.png)
     >Note: If you are not signed-in, you are prompted to **Sign in to Azure**. You can also **Create a free Azure account**. After successful sign in from the browser, go back to Visual Studio Code.
 1. Choose **+ Create New Function App in Azure**.
-1. Type a globally unique name that identifies your function app and press Enter. Valid characters for a function app name are `a-z`, `0-9`, and `-`.
+1. Type a globally unique name that identifies your function app and press <kbd>Enter</kbd>. Valid characters for a function app name are `a-z`, `0-9`, and `-`.
 1. Select the most recent Node.js LTS version for the runtime stack.
 1. Select a geographical location near you for the location for new resources.
 
-    When you press Enter, the following Azure resources are created in your subscription:
+    When you press <kbd>Enter</kbd>, the following Azure resources are created in your subscription:
   
     - Resource group: Contains all of the created Azure resources. The name is based on your function app name.
     - Storage account: A standard Storage account is created with a unique name that is based on your function app name.
@@ -143,14 +143,14 @@ You can also deploy and run the Azure Function from your own Azure account.
 
 1. Select the Azure icon on the Activity bar. You should see an Azure Functions area in the Side Bar.
     ![Screenshot of the Azure icon on the Activity bar.](images/azure-icon.png)
-1. In the **Azure: Functions** area, expand the new function app under your subscription. Expand **Functions**, right-click **AddTwo**, and then choose **Copy function URL**.
+1. In the **Azure: Functions** area, expand the new function app under your subscription. Expand **Functions**, right-click (or select and hold) **AddTwo**, and then choose **Copy function URL**.
 1. You can test that the Azure Function is working by calling it from a browser. Open a browser window and enter the URL you just copied. If you want to add numbers, append the following query string to the URL `?first=1&second=2`. You should see the result `{ "answer": 3}` returned to the browser.
 
 ### Add CORS support for the custom function
 
 You'll need to enable CORS support for the Office Add-in before it can call the Azure Function online.
 
-1. Open the Azure portal and sign in. You can do this by selecting the Azure icon on the Activity bar in Visual Studio Code. Then right-click your Azure subscription for the Azure Function and choose **Open in Portal**.
+1. Open the Azure portal and sign in. You can do this by selecting the Azure icon on the Activity bar in Visual Studio Code. Then, right-click (or select and hold) your Azure subscription for the Azure Function and choose **Open in Portal**.
 1. In the Azure portal, select the function app.
 1. Choose **CORS** in the **API** section.
 1. Add a new entry in the **Allowed Origins** list for `https://localhost:3000`. This will enable the custom function to call into the Azure Function app.

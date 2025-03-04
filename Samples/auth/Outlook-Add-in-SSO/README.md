@@ -2,21 +2,21 @@
 page_type: sample
 urlFragment: outlook-add-in-sso-aspnet
 products:
-- office
-- office-outlook
+  - office
+  - office-outlook
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 05/06/2021 10:00:00 AM
 description: "An Outlook add-in sample that accesses Microsoft Graph using single sign-on and adds buttons to the Outlook ribbon."
 ---
 
 # Single Sign-on (SSO) sample Outlook add-in
 
-**Applies to:** Outlook on Windows | Outlook on Mac | Outlook on the web
+**Applies to:** Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic) | Outlook on Mac | Outlook on the web
 
 ## Summary
 
@@ -94,7 +94,7 @@ The browser will attempt to redirect back to your app, which may not be running.
 
 ## Run the Sample
 
-1. In the **Solution Explorer**, right-click the **AttachmentDemo** project and select **Properties**.
+1. In the **Solution Explorer**, right-click (or select and hold) the **AttachmentDemo** project and select **Properties**.
 1. In the **Properties** window, set the following property values.
 
 | Property | Value |
@@ -104,7 +104,7 @@ The browser will attempt to redirect back to your app, which may not be running.
 | `Use multi-factor auth` | `True` |
 
 1. Press **F5** to build and debug the project. You may be prompted to trust the developer certificate.
-1. You should be prompted for a user account and password. Provide a user in your Office tenant, or an Outlook.com account. The add-in will be installed for that user, and either Outlook on the web or Outlook on Windows will open.
+1. You should be prompted for a user account and password. Provide a user in your Office tenant, or an Outlook.com account. The add-in will be installed for that user, and either Outlook on the web or Outlook on Windows (new or classic) will open.
 
 1. Select any message, **that has one or more attachments**.
 1. Open the task pane:
@@ -113,7 +113,7 @@ The browser will attempt to redirect back to your app, which may not be running.
 
     ![Screen shot of the elipses button in Outlook on the web](buttons-outlook-web.PNG)
 
-    - If you're in Outlook on Windows or Mac: On the **Home** tab, select **Choose attachments**. Note that if the Outlook app window is too small, that **Choose attachments** will instead be located on the **Home** tab's **...** (**More commands**) button.
+    - If you're in Outlook on Windows (classic) or Mac: On the **Home** tab, select **Choose attachments**. Note that if the Outlook app window is too small, that **Choose attachments** will instead be located on the **Home** tab's **...** (**More commands**) button.
 
     ![Screen shot of the Choose attachments button on Home tab in Outlook on the web](buttons-outlook-desktop.png)
 
@@ -138,7 +138,7 @@ It's recommended to test all paths when working with SSO. In some scenarios, you
     let authSSO = false;
     ```
 
-There is also a `MockError` method available in the **Saveattachments.cs** controller to throw various MSAL or Microsoft Graph errors for testing.    
+There is also a `MockError` method available in the **Saveattachments.cs** controller to throw various MSAL or Microsoft Graph errors for testing.
 
 ## Troubleshoot manifest issues
 

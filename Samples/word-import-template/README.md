@@ -2,14 +2,14 @@
 page_type: sample
 urlFragment: word-import-template
 products:
-- office-word
-- office
+  - office-word
+  - office
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 03/08/2024 4:00:00 PM
 description: "Shows how to import templates in a Word document."
 ---
@@ -61,9 +61,9 @@ Once the add-in is loaded, use the following steps to try out the functionality.
 
 1. Open Word on Windows, on Mac, or in a browser.
 
-1. Go to the Home tab and choose the **Show Task Pane** button in the ribbon to open the add-in task pane.
+1. To open the add-in task pane, go to the **Home** tab and choose **Show Task Pane**.
 
-1. In the "Template" section of the add-in UI, select the **Choose File** button. Navigate to the location of your .docx file then open the file. The template is automatically applied to your document, replacing any preexisting content.
+1. In the "Template" section of the add-in UI, select **Choose File**. Navigate to the location of your .docx file then open the file. The template is automatically applied to your document, replacing any preexisting content.
 
     ![The initial screen displaying the button to choose a file.](./resources/word-import-template-initial-screen.png)
 
@@ -134,4 +134,4 @@ Copyright (c) 2024 Microsoft Corporation. All rights reserved.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-<img src="https://pnptelemetry.azurewebsites.net/pnp-officeaddins/samples/word-insert-template" />
+<img src="https://pnptelemetry.azurewebsites.net/pnp-officeaddins/samples/word-import-template" />

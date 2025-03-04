@@ -2,15 +2,16 @@
 page_type: sample
 urlFragment: office-add-in-sso-naa
 products:
-- office-excel
-- office-word
-- office-powerpoint
+  - office
+  - office-excel
+  - office-word
+  - office-powerpoint
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: "03/19/2024 10:00:00 AM"
 description: "This sample shows how to implement SSO in an Office Add-in by using nested app authentication."
 ---
@@ -21,7 +22,8 @@ description: "This sample shows how to implement SSO in an Office Add-in by usin
 
 This sample shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed in user. The sample displays the signed in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document.
 
-IMPORTANT: Nested app authentication is currently in preview. To try this feature you need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) and choose the **Beta Channel**. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see https://github.com/OfficeDev/office-js/issues).
+> [!IMPORTANT]
+> Nested app authentication is currently in preview. To try this feature, you need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see https://github.com/OfficeDev/office-js/issues).
 
 ## Features
 
@@ -30,13 +32,12 @@ IMPORTANT: Nested app authentication is currently in preview. To try this featur
 
 ## Applies to
 
-- Word, Excel, and PowerPoint on Windows build 16.0.17531.20000 or later.
-- Word, Excel, and PowerPoint on Mac build 16.85.24040319 or later.
+For a list of supported hosts, see [NAA supported accounts and hosts](https://learn.microsoft.com/office/dev/add-ins/develop/enable-nested-app-authentication-in-your-add-in#naa-supported-accounts-and-hosts).
 
 ## Prerequisites
 
 - Office connected to a Microsoft 365 subscription (including Office on the web).
-- You need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) to use the NAA preview features. Choose the **Beta Channel** insider level.
+- You need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) to use the NAA preview features. Choose the **Current Channel (Preview)** insider level.
 - [Node.js](https://nodejs.org/) version 16 or greater.
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) version 8 or greater.
 
@@ -84,14 +85,15 @@ You'll be prompted to consent to the scopes the sample needs when you select the
 ## Selecting hosts and debugging steps
 
 If you want to choose Word or PowerPoint, modify the `start` command in the `package.json` file to match one of the following entries.
+
 - For Word: `"start": "office-addin-debugging start manifest.xml desktop --app word",`
 - For PowerPoint: `"start": "office-addin-debugging start manifest.xml desktop --app powerpoint",`
 
 You can also debug the sample by opening the project in VS Code.
 
-1. Select the **Run and Debug** icon in the **Activity Bar** on the side of VS Code. You can also use the keyboard shortcut **Ctrl+Shift+D**.
+1. Select the **Run and Debug** icon in the **Activity Bar** on the side of VS Code. You can also use the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>.
 1. Select the launch configuration you want from the **Configuration dropdown** in the **Run and Debug** view. For example, **Word Desktop (Edge Chromium)**.
-1. Start your debug session with **F5**, or **Run > Start Debugging**.
+1. Start your debug session with **F5**, or **Run** > **Start Debugging**.
 
 ![VS Code debug view](./assets/vs-code-debug-view.png)
 
@@ -101,7 +103,7 @@ For more information on debugging with VS Code, see [Debugging](https://code.vis
 
 The `src/taskpane/authConfig.ts` file contains the MSAL code for configuring and using NAA. It contains a class named AccountManager which manages getting user account and token information.
 
-- The `initialize` function is called from Office.onReady to configure and intitialize MSAL to use NAA.
+- The `initialize` function is called from Office.onReady to configure and initialize MSAL to use NAA.
 - The `ssoGetToken` function gets an access token for the signed in user to call Microsoft Graph APIs.
 - The `ssoGetUserIdentity` function gets the account information of the signed in user. This can be used to get user details such as name and email.
 

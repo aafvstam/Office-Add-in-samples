@@ -1,0 +1,45 @@
+[
+    {
+        "name": "office-add-in-keyboard-shortcuts",
+        "reponame": "OfficeDev",
+        "source": "officedev",
+        "title": "Use keyboard shortcuts for Office Add-in actions",
+        "shortDescription": "This sample shows how to create custom keyboard shortcuts to invoke certain actions for your Office Add-in. ",
+        "url": "https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts",
+        "longDescription": "This sample shows how to create custom keyboard shortcuts for your add-in. Keyboard shortcuts can be used to achieve any action within the add-in runtime.",
+        "creationDateTime": "2020-11-05",
+        "updateDateTime": "2024-09-27",
+        "products": [
+            "Office"
+        ],
+        "metadata": [
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "JavaScript"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://officedev.github.io/Office-Add-in-samples/Samples/office-keyboard-shortcuts/assets/office-keyboard-shortcuts-overview.jpg",
+                "alt": "The sample's task pane displaying a list of available keyboard shortcuts."
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "microsoft",
+                "pictureUrl": "https://github.com/microsoft.png",
+                "name": "Microsoft"
+            }
+        ],
+        "references": [
+            {
+                "name": "Add custom keyboard shortcuts to your Office Add-ins",
+                "description": "Keyboard shortcuts, also known as key combinations, enable your add-in's users to work more efficiently. Keyboard shortcuts also improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.",
+                "url": "https://learn.microsoft.com/office/dev/add-ins/design/keyboard-shortcuts"
+            }
+            
+        ]
+    }
+]

@@ -1,24 +1,23 @@
 ---
-title: "Report spam or phishing emails in Outlook (preview)"
+title: "Report spam or phishing emails in Outlook"
 page_type: sample
 urlFragment: outlook-spam-reporting
 products:
-- office-add-ins
-- office-outlook
-- office
+  - office-outlook
+  - office
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 03/26/2024 10:00:00 AM
 description: "Learn how to create an integrated spam-reporting add-in in Outlook."
 ---
 
-# Report spam or phishing emails in Outlook (preview)
+# Report spam or phishing emails in Outlook
 
-**Applies to**: Outlook on Windows
+**Applies to**: Outlook on the web, Outlook on Windows (new and classic)
 
 ![A sample spam-reporting dialog.](./assets/readme/outlook-spam-processing-dialog.png)
 
@@ -30,46 +29,29 @@ This sample showcases how to build an integrated spam-reporting solution that:
 - Provides the user with a processing dialog to report an email.
 - Facilitates saving a copy of the reported email to a file to submit it to your backend system for further processing.
 
-To learn about key components of this sample, see [Implement an integrated spam-reporting add-in (preview)](https://learn.microsoft.com/office/dev/add-ins/outlook/spam-reporting).
-
-> [!IMPORTANT]
-> The integrated spam-reporting feature is currently in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through [GitHub](https://github.com/OfficeDev/office-js/issues/new/choose).
+To learn about key components of this sample, see [Implement an integrated spam-reporting add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/spam-reporting).
 
 ## Applies to
 
-Outlook on Windows starting in Version 2307 (Build 16626.10000).
+- Outlook on the web
+- [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- classic Outlook on Windows starting in Version 2307 (Build 16626.10000)
+
+## Prerequisites
+
+A Microsoft 365 subscription.
 
 > [!NOTE]
 > If you don't have a Microsoft 365 subscription, you might qualify for a free developer subscription that's renewable for 90 days and comes configured with sample data. For details, see the [Microsoft 365 Developer Program FAQ](https://learn.microsoft.com/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-).
 
-## Prerequisites
-
-- Microsoft 365 subscription
-- You must join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-
-> [!TIP]
-> If you're unable to choose a channel in your Outlook client, see [Let users choose which Microsoft 365 Insider channel to install on Windows devices](https://learn.microsoft.com/deployoffice/insider/deploy/user-choice).
-
-> [!IMPORTANT]
-> To test the `getAsFileAsync` method while it's still in preview in Outlook on Windows, you must configure your computer's registry.
->
-> Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry as follows:
->
-> 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
-> 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
->
->    ![The EnableBetaAPIsInJavaScript registry value is set to 1.](https://learn.microsoft.com/office/dev/add-ins/images/outlook-beta-registry-key.png)
-
 ## Run the sample
 
----
-
-Run this sample in Outlook on Windows using one of the following add-in file hosting options.
+Run this sample in Outlook on Windows (new or classic) or on the web using one of the following add-in file hosting options.
 
 ### Run the sample from GitHub
 
 1. Download the **manifest.xml** file from this sample to a folder on your computer.
-1. Sideload the add-in manifest in Outlook on Windows by following the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing#sideload-manually).
+1. Sideload the add-in manifest in Outlook on Windows (new or classic) or on the web by following the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing#sideload-manually).
 1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
 ### Run the sample from localhost
@@ -107,26 +89,28 @@ If you prefer to host the web server for the sample on your computer, follow the
 
     The http-server will run and host the current folder's files on localhost:3000.
 
-1. Now that your localhost web server is running, you can sideload the **manifest-localhost.xml** file provided in the sample folder. To sideload the manifest, follow the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing?tabs=windows-web#sideload-manually).
+1. Now that your localhost web server is running, you can sideload the **manifest-localhost.xml** file provided in the sample folder. To sideload the manifest, follow the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing#sideload-manually).
 1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
 ## Try it out
 
-Once the add-in is loaded in Outlook, use the following steps to try out its functionality.
+Once the add-in is loaded in Outlook, use the following steps to try out its functionality. The images in the following steps show how the spam-reporting add-in and its dialogs appear in classic Outlook on Windows. Note that the appearance may vary depending on your Outlook client.
 
 1. Choose a message from your inbox, then select the add-in's button from the ribbon.
 
-    ![The spam-reporting add-in button is selected from the ribbon.](./assets//readme/outlook-spam-ribbon-button.png)
+    ![The spam-reporting add-in button is selected from the ribbon.](./assets/readme/outlook-spam-ribbon-button.png)
 1. In the preprocessing dialog, choose a reason for reporting the message and add information about the message, if configured. Then, select **Report**.
-1. (Optional) In the post-processing dialog, select **OK**.
 
-    ![The post-processing dialog of the sample spam-reporting add-in.](./assets//readme/outlook-spam-post-processing-dialog.png)
+    ![The preprocessing dialog of the sample spam-reporting add-in.](./assets/readme/outlook-spam-processing-dialog.png)
+1. In the post-processing dialog, select **OK**.
+
+    ![The post-processing dialog of the sample spam-reporting add-in.](./assets/readme/outlook-spam-post-processing-dialog.png)
 
 ## References
 
 - [Implement an integrated spam-reporting add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/spam-reporting)
-- [ReportPhishingCommandSurface Extension Point](https://learn.microsoft.com/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview)
-- [Office.MessageRead.getAsFileAsync() method](https://learn.microsoft.com/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1))
+- [ReportPhishingCommandSurface Extension Point](https://learn.microsoft.com/javascript/api/manifest/extensionpoint?#reportphishingcommandsurface)
+- [Office.MessageRead.getAsFileAsync() method](https://learn.microsoft.com/javascript/api/outlook/office.messageread#outlook-office-messageread-getasfileasync-member(1))
 - [Troubleshoot event-based and spam-reporting add-ins](https://learn.microsoft.com/office/dev/add-ins/outlook/troubleshoot-event-based-and-spam-reporting-add-ins)
 - [Debug your event-based or spam-reporting Outlook add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/debug-autolaunch)
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](https://learn.microsoft.com/office/dev/add-ins/testing/debug-with-vs-extension)
@@ -152,12 +136,14 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 | Solution | Author(s) |
 | ----- | ----- |
-| Report spam or phishing emails in Outlook (preview) | [Eric Legault](https://www.linkedin.com/in/ericlegault/) |
+| Report spam or phishing emails in Outlook | [Eric Legault](https://www.linkedin.com/in/ericlegault/) |
 
 ## Version history
 
 | Version | Date | Comments |
 | ----- | ----- | ----- |
 | 1.0 | March 26, 2024 | Initial release |
+| 1.1 | July 1, 2024 | Create separate JavaScript files for supported clients |
+| 1.2 | September 11, 2024 | Correct the `Office.actions.associate` call and consolidate the JavaScript files |
 
 <img src="https://pnptelemetry.azurewebsites.net/pnp-officeaddins/samples/outlook-spam-reporting" />

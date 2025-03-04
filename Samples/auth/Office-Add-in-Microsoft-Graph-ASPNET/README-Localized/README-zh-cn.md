@@ -1,14 +1,14 @@
 ---
 page_type: sample
 products:
-- office-excel
-- office-365
+  - office
+  - office-excel
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 5/1/2019 1:25:00 PM
 ---
 # 使用 Microsoft Graph 和 MSAL.NET 在 Office 外接程序中获取 OneDrive 数据 
@@ -94,7 +94,7 @@ Office 外接程序 Microsoft Graph ASP.NET | Microsoft
 
     ![选择所需的 Office 主机应用程序：](images/SelectHost.JPG)Excel、PowerPoint 或 Word](images/SelectHost.JPG)
 
-6. 按 F5。 
+6. 按 <kbd>F5</kbd>。 
 7. 在 Office 应用程序中，选择“**OneDrive文件**”组中的“**插入**”>“**打开外接程序**”，打开任务窗格外接程序。
 8. 外接程序中的页面和按钮一目了然。 
 
