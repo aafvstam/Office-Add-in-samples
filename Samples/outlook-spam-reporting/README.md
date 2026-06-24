@@ -5,6 +5,7 @@ urlFragment: outlook-spam-reporting
 products:
   - office-outlook
   - office
+  - m365
 languages:
   - javascript
 extensions:
@@ -17,7 +18,7 @@ description: "Learn how to create an integrated spam-reporting add-in in Outlook
 
 # Report spam or phishing emails in Outlook
 
-**Applies to**: Outlook on the web, Outlook on Windows (new and classic)
+**Applies to**: Outlook on the web, Outlook on Windows (new and classic), Outlook on Mac
 
 ![A sample spam-reporting dialog.](./assets/readme/outlook-spam-processing-dialog.png)
 
@@ -36,61 +37,111 @@ To learn about key components of this sample, see [Implement an integrated spam-
 - Outlook on the web
 - [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 - classic Outlook on Windows starting in Version 2307 (Build 16626.10000)
+- Outlook on Mac starting in Version 16.100 (25072537)
 
 ## Prerequisites
 
-A Microsoft 365 subscription.
+- A Microsoft 365 subscription.
 
-> [!NOTE]
-> If you don't have a Microsoft 365 subscription, you might qualify for a free developer subscription that's renewable for 90 days and comes configured with sample data. For details, see the [Microsoft 365 Developer Program FAQ](https://learn.microsoft.com/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-).
+    > **Note**: If you don't have a Microsoft 365 subscription, you might qualify for a free developer subscription that's renewable for 90 days and comes configured with sample data. For details, see the [Microsoft 365 Developer Program FAQ](https://learn.microsoft.com/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-).
+
+- (Optional) If you want to run the web server on localhost, install a recent version of [npm](https://www.npmjs.com/get-npm) and [Node.js](https://nodejs.org) on your computer. To check if you've already installed these tools, from a command prompt, run the following commands.
+
+    ```console
+    node -v
+    npm -v
+    ```
+
+- (Optional) If you want to run the sample with a [unified manifest for Microsoft 365](https://learn.microsoft.com/office/dev/add-ins/develop/json-manifest-overview) using GitHub as the web host, install the [Microsoft 365 Agents Toolkit command line interface (CLI)](https://learn.microsoft.com/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli). From a command prompt, run the following command.
+
+    ```console
+    npm install -g @microsoft/m365agentstoolkit-cli
+    ```
 
 ## Run the sample
 
-Run this sample in Outlook on Windows (new or classic) or on the web using one of the following add-in file hosting options.
+Run this sample with a [unified manifest for Microsoft 365](#run-with-the-unified-manifest-for-microsoft-365) or [add-in only manifest](#run-with-the-add-in-only-manifest). Use one of the following add-in file hosting options.
 
-### Run the sample from GitHub
+> [!NOTE]
+>
+> - The spam-reporting sample with the unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. To run the sample in Outlook on the web or the new Outlook on Windows, use the add-in only manifest.
+>
+> - To learn more about manifests, see [Office Add-ins manifest](https://learn.microsoft.com/office/dev/add-ins/develop/add-in-manifests).
+
+### Run with the unified manifest for Microsoft 365
+
+#### Use GitHub as the web host
+
+The quickest way to run the sample is to use GitHub as the web host. However, you can't debug or change the source code. The add-in web files are served from this GitHub repository.
+
+1. Download the **outlook-spam-reporting.zip** file from this sample to a folder on your computer.
+1. Sideload the sample to Outlook by following the instructions in [Sideload with Microsoft 365 Agents Toolkit CLI (command-line interface)](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-add-in-with-unified-manifest#sideload-with-microsoft-365-agents-toolkit-cli-command-line-interface).
+1. Follow the steps in [Try it out](#try-it-out) to test the sample.
+1. To uninstall the add-in from Outlook, run the following command. Replace *{title ID}* with the add-in's title ID that was generated when you sideloaded the add-in.
+
+    ```console
+    atk uninstall --mode title-id --title-id {title ID} --interactive false
+    ```
+
+#### Use localhost
+
+If you prefer to host the web server on localhost, follow these steps.
+
+1. Clone or download this repository.
+1. From a command prompt, go to the root of the project folder **/samples/outlook-spam-reporting**.
+1. Run the following commands.
+
+    ```console
+    npm install
+    npm start
+    ```
+
+    This starts the web server on localhost and sideloads the **manifest.json** file to Outlook.
+
+1. Follow the steps in [Try it out](#try-it-out) to test the sample.
+
+    > **Tip**: To debug a spam-reporting add-in, see [Debug your event-based or spam-reporting Outlook add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/debug-autolaunch).
+
+1. To stop the web server and uninstall the add-in from Outlook, run the following command.
+
+    ```console
+    npm stop
+    ```
+
+### Run with the add-in only manifest
+
+#### Use GitHub as the web host
+
+The quickest way to run the sample is to use GitHub as the web host. However, you can't debug or change the source code. The add-in web files are served from this GitHub repository.
 
 1. Download the **manifest.xml** file from this sample to a folder on your computer.
-1. Sideload the add-in manifest in Outlook on Windows (new or classic) or on the web by following the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing#sideload-manually).
+1. Sideload the add-in only manifest in Outlook on the web or on Windows (new or classic) by following the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest#sideload-manually).
 1. Follow the steps in [Try it out](#try-it-out) to test the sample.
+1. To uninstall the add-in from Outlook, follow the instructions in [Remove a sideloaded add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest#remove-a-sideloaded-add-in).
 
-### Run the sample from localhost
+#### Use localhost
 
-If you prefer to host the web server for the sample on your computer, follow these steps.
+If you prefer to host the web server on localhost, follow these steps.
 
-1. Install a recent version of [npm](https://www.npmjs.com/get-npm) and [Node.js](https://nodejs.org/) on your computer. To verify if you've already installed these tools, run the commands `node -v` and `npm -v` in your terminal.
-1. You need http-server to run the local web server. If you haven't installed this yet, run the following command.
-
-   ```console
-   npm install --global http-server
-   ```
-
-1. You need Office-Addin-dev-certs to generate self-signed certificates to run the local web server. If you haven't installed this yet, you can do this with the following command.
+1. Clone or download this repository.
+1. From a command prompt, run the following commands.
 
     ```console
-    npm install --global office-addin-dev-certs
+    npm install
+    npm run start:xml
     ```
 
-1. Clone or download this sample to a folder on your computer, then go to that folder in a console or terminal window.
-1. Run the following command to generate a self-signed certificate to use for the web server.
+    This starts the web server on localhost and sideloads the **manifest-localhost.xml** file to Outlook.
 
-   ```console
-    npx office-addin-dev-certs install
-    ```
+1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
-    This command will display the folder location where it generated the certificate files.
+    > **Tip**: To debug a spam-reporting add-in, see [Debug your event-based or spam-reporting Outlook add-in](https://learn.microsoft.com/office/dev/add-ins/outlook/debug-autolaunch).
 
-1. Go to the folder location where the certificate files were generated, then copy the **localhost.crt** and **localhost.key** files to the cloned or downloaded sample folder.
-1. Run the following command.
+1. To stop the web server and uninstall the add-in from Outlook, run the following command.
 
     ```console
-    http-server -S -C localhost.crt -K localhost.key --cors . -p 3000
+    npm run stop:xml
     ```
-
-    The http-server will run and host the current folder's files on localhost:3000.
-
-1. Now that your localhost web server is running, you can sideload the **manifest-localhost.xml** file provided in the sample folder. To sideload the manifest, follow the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing#sideload-manually).
-1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
 ## Try it out
 
@@ -145,5 +196,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 | 1.0 | March 26, 2024 | Initial release |
 | 1.1 | July 1, 2024 | Create separate JavaScript files for supported clients |
 | 1.2 | September 11, 2024 | Correct the `Office.actions.associate` call and consolidate the JavaScript files |
+| 1.3 | February 28, 2025 | Add support for the unified manifest for Microsoft 365 |
+| 1.4 | August 26, 2025 | Note support for Outlook on Mac |
 
 <img src="https://pnptelemetry.azurewebsites.net/pnp-officeaddins/samples/outlook-spam-reporting" />
